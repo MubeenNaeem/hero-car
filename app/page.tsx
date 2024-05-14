@@ -1,14 +1,5 @@
-import {
-  Archivo_Black,
-  Michroma,
-  Rubik_Mono_One,
-  Space_Grotesk,
-} from "next/font/google";
 import Image from "next/image";
-
-const logoFont = Michroma({ subsets: ["latin"], weight: ["400"] });
-const textFont = Space_Grotesk({ subsets: ["latin"] });
-// const textFont = Space_Grotesk({ subsets: ["latin"] });
+import { logoFont, textFont } from "./layout";
 
 export default function Home() {
   return (

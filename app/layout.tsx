@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+import { Michroma, Space_Grotesk } from "next/font/google";
+
+export const logoFont = Michroma({ subsets: ["latin"], weight: ["400"] });
+export const textFont = Space_Grotesk({ subsets: ["latin"] });
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
