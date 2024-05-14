@@ -1,113 +1,150 @@
-import Image from 'next/image'
+import {
+  Archivo_Black,
+  Michroma,
+  Rubik_Mono_One,
+  Space_Grotesk,
+} from "next/font/google";
+import Image from "next/image";
+
+const logoFont = Michroma({ subsets: ["latin"], weight: ["400"] });
+const textFont = Space_Grotesk({ subsets: ["latin"] });
+// const textFont = Space_Grotesk({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+    <div className="m-auto max-w-6xl">
+      {/* Background Blur */}
+      <div className="absolute left-0 right-0 -z-50">
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={"/ev-bg-big.png"}
+          alt="Background"
+          width={1920}
+          height={1}
+          className="h-screen blur-md"
         />
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* Main Background */}
+      <div className="absolute left-0 right-0 -z-40 m-auto max-w-6xl">
+        <Image
+          src={"/ev-bg-big.png"}
+          alt="Background"
+          width={1920}
+          height={1}
+        />
       </div>
-    </main>
-  )
+
+      {/* Car */}
+      <div className="absolute left-0 right-0 -z-10 m-auto max-w-6xl">
+        <Image src={"/ev-car.png"} alt="Car" width={1920} height={1} />
+      </div>
+
+      {/* POWER Text */}
+      <div className="absolute -left-40 -right-40 top-[300px] -z-20 m-auto max-w-6xl overflow-hidden opacity-20">
+        <p
+          className={`${logoFont.className} z-10 overflow-hidden text-center text-[240px]`}
+        >
+          EVOLUTION
+        </p>
+      </div>
+
+      {/* Grid Lines */}
+      <div className="absolute left-0 right-0 m-auto grid w-full max-w-6xl grid-cols-5">
+        <div className="h-screen w-[1px] bg-white bg-opacity-0" />
+        <div className="h-screen w-[1px] bg-white bg-opacity-10" />
+        <div className="h-screen w-[1px] bg-white bg-opacity-10" />
+        <div className="h-screen w-[1px] bg-white bg-opacity-10" />
+        <div className="h-screen w-[1px] bg-white bg-opacity-10" />
+      </div>
+
+      {/* Content Division */}
+      <div
+        className={`${textFont.className} absolute left-0 right-0 m-auto h-screen w-full max-w-6xl`}
+      >
+        {/* Navigation Bar */}
+        <div className="flex items-center justify-between px-16 py-4 text-sm text-black backdrop-blur-lg">
+          <div className="flex gap-9">
+            <p>Technology</p>
+            <p>Service</p>
+            <p>Careers</p>
+          </div>
+          <div>
+            <p className={`${logoFont.className} text-center text-xl`}>
+              EVOLUTION
+            </p>
+          </div>
+          <div className="flex justify-end gap-9">
+            <p>Overview</p>
+            <p>Features</p>
+            <p>Search</p>
+          </div>
+        </div>
+
+        <div className="mt-24 grid grid-cols-10 items-end px-16">
+          <p
+            className={`text-8xl uppercase ${logoFont.className} col-span-7 drop-shadow-2xl`}
+          >
+            Lets try power{" "}
+          </p>
+          <p className="col-span-3">
+            The engineering calculation have arrived at 0-60 in 1.7s and 0-100
+            in 2.8s, 600hp and a 650-mile range.
+          </p>
+        </div>
+
+        <div className="mt-96 grid grid-cols-10 items-end px-16">
+          <div className="col-span-2" />
+          <p className="col-span-3">
+            Based on the STLA Large electric platform, which the company has
+            previously said will have batteries from 101 to 120kWh and can run
+            at 800 volts.
+          </p>
+          <div className="col-span-2" />
+          <div className="col-span-3 flex items-center">
+            <div className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-white bg-opacity-20">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                height={20}
+                width={20}
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                />
+              </svg>
+            </div>
+            <p className="leading-5">
+              Discover the
+              <br /> Evolution
+            </p>
+          </div>
+        </div>
+
+        {/* Scroll Down */}
+        <div className="absolute bottom-8 left-8 m-auto flex h-[116px] w-5 max-w-6xl flex-col justify-between">
+          <p className="ml-1 rotate-90">Scroll&nbsp;Down</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            width={20}
+            height={20}
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
 }
